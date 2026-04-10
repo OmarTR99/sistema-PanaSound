@@ -111,7 +111,7 @@ elif choice == "🛒 Registrar Venta":
                         "PRECIO_VENTA": [precio_venta], "GANANCIA_UNITARIA": [ganancia_unit],
                         "GANANCIA_TOTAL": [ganancia_total], "TOTAL_INVERTIDO": [total_invertido]
                     })
-                    global df_ventas
+                    
                     df_ventas = pd.concat([df_ventas, nueva_venta], ignore_index=True)
                     conn.update(worksheet="Ventas", data=df_ventas)
                     
@@ -146,7 +146,7 @@ elif choice == "📦 Gestionar Inventario":
                         "MODELO": [n_modelo], "COMPRADOS": [n_comprados], 
                         "VENDIDOS": [0], "QUEDAN": [n_comprados], "COSTO_BASE": [n_costo]
                     })
-                    global df_inv
+                    
                     df_inv = pd.concat([df_inv, nuevo_prod], ignore_index=True)
                     conn.update(worksheet="Inventario", data=df_inv)
                     
